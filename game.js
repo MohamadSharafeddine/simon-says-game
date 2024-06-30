@@ -67,9 +67,9 @@ function isEqual(arr1, arr2) {
 }
 
 function gameLoop() {
+        level++
         document.querySelector("#level-title").textContent = `Level ${level}`
         addColorToPattern()
         simonSays()
-        level++
         console.log(gamePattern)
 }
