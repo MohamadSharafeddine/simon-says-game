@@ -47,6 +47,11 @@ buttons.forEach(button => {
 button.addEventListener('click', function(event) {
 const clicked_id = event.target.id
 userClickedPattern.push(clicked_id)
+document.getElementById(clicked_id).classList.add("pressed");
+setTimeout(() => {
+    document.getElementById(clicked_id).classList.remove("pressed");
+}, 100);
+
 isEqual(userClickedPattern, gamePattern)
 })
 })
