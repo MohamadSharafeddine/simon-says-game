@@ -39,7 +39,7 @@ function simonSays() {
         playSound(gamePattern[i])
         setTimeout(() => {
             flashed_button.style.backgroundColor = original_color
-        }, 100)}, 500* i)
+        }, 100)}, 500 * i)
 
 }}
 
@@ -65,8 +65,13 @@ function isEqual(arr1, arr2) {
         userClickedPattern = []
         level = 0
         playSound("wrong")
-        started = false
+        document.body.classList.add("game-over")
+        setTimeout(() => {
+        document.body.classList.remove("game-over")
+    }, 200)
         
+
+        started = false
     }
 }
 
