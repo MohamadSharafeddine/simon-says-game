@@ -48,8 +48,6 @@ button.addEventListener('click', function(event) {
 const clicked_id = event.target.id
 userClickedPattern.push(clicked_id)
 isEqual(userClickedPattern, gamePattern)
-
-console.log(userClickedPattern)
 })
 })
 
@@ -66,7 +64,9 @@ function isEqual(arr1, arr2) {
         gamePattern = []
         userClickedPattern = []
         level = 0
+        playSound("wrong")
         started = false
+        
     }
 }
 
