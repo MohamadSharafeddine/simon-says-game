@@ -19,7 +19,10 @@ document.addEventListener('keypress', () => {
     }
 })
 
-
+function playSound(color) {
+    var audio = new Audio(`sounds/${color}.mp3`)
+    audio.play()
+}
 
 function addColorToPattern() {
     const random_index = Math.floor(Math.random() * buttonColors.length);
@@ -33,6 +36,7 @@ function simonSays() {
         const flashed_button = document.getElementById(gamePattern[i])
         const original_color = flashed_button.style.backgroundColor
         flashed_button.style.backgroundColor = "grey"
+        playSound(gamePattern[i])
         setTimeout(() => {
             flashed_button.style.backgroundColor = original_color
         }, 100)}, 500* i)
